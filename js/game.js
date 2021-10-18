@@ -6,21 +6,21 @@ function loadGame () {
     let background = document.querySelector(".game");
     let player = document.querySelector(".player");
 
+    background.style.webkitAnimationPlayState = "running";
+    player.classList.add("running");  
+
     document.addEventListener("keydown", function (e){
-        if(e.key == "d" || e.key == "ArrowRight"){
-            background.style.webkitAnimationPlayState = "running";
-            player.classList.add("running");
-        }
-        if(e.key == " "){
-            background.style.webkitAnimationPlayState = "running";
-            player.classList.add("attack");
+        if(e.code == "KeyW" || e.code == "ArrowUp" || e.key == " "){
+            console.log("Se apreto el boton hacia arriba.");
+            player.classList.add("jump");
+
         }
 
-        document.addEventListener("keyup", function (e){
-            background.style.webkitAnimationPlayState = "paused";
-            player.className = "player";
+        document.addEventListener("keyup", function resetAnimation(e){
+            console.log("se dejo de apretar el boton hacia arriba.");
+            player.className = "player running";
         });
-        console.log(e);
+
     })
     
 }

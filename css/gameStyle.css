@@ -23,15 +23,15 @@
   }
 
 .player{
+  
     display: flex;
     justify-content: center;
     width: 221px;
     height: 190px;
     position: absolute;
-    top: 75%;
+    top: 80%;
     left: 10%;
     background: url("../assets/Wizard/Idle.png") repeat-x left;
-    transform: scale(2,2);
     animation: stay 1s steps(6) infinite;
 }
 
@@ -40,9 +40,9 @@
     animation: run 1s steps(8) infinite;
 }
  
-.attack{
-    background: url("../assets/Wizard/Attack1.png") repeat-x left;
-    animation: attack 1s steps(8) infinite;
+.jump{
+    background: url("../assets/Wizard/Jump.png") repeat-x left;
+    animation: jump 1s steps(2), up 2s 1;
 }
 
 @keyframes stay{
@@ -55,7 +55,20 @@
     100%{background-position: -1848px;}
 }
 
-@keyframes attack{
+@keyframes jump{
     0%{background-position: 0px;}
-    100%{background-position: -1848px; transform: translate(0,-200px);}
+    100%{background-position: -462px;}
+}
+
+@keyframes up{
+  from{
+    transform : translate(0,0);
+  }
+  50%{
+    transform : translate(0,-300%);
+    background: url("../assets/Wizard/Fall.png") repeat-x left;
+  }
+  to{
+    transform : translate(0,0);
+  }
 }
