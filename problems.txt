@@ -1,0 +1,13 @@
+//Cosas que mejorar:
+Que al 50% de la animacion jump/up cambie a el sprite por Fall.png.
+
+Creo que habria que revisar lo del movimiento del background porque no se si es la forma adecuada de usarlo.
+
+//Cosas para hacer:
+Que haya objetos los cuales tengas que esquivar y de caso contrario perder.
+
+Existe un temporizador a parte del que aparece como contador de puntos. Estaria bueno que los puntos sean por monedas que agarras en el mapa y no por el tiempo.
+
+Que el personaje no baje derepente, es decir, que baje a la misma velocidad que sube (Aunque el jugador ya haya soltado la key en mitad de animacion).
+
+agregar un item especial que al tomarlo cambie el escenario

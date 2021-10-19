@@ -22,22 +22,36 @@
     }
   }
 
-.player{
-  
+  .points{
+    position: absolute;
+    width: 100%;
     display: flex;
     justify-content: center;
-    width: 221px;
-    height: 190px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70px;
+  }
+
+  .div-player{
+    transform: scale(2,2);
     position: absolute;
-    top: 80%;
+    top: 75%;
     left: 10%;
-    background: url("../assets/Wizard/Idle.png") repeat-x left;
-    animation: stay 1s steps(6) infinite;
-}
+  }
+
+
+  .player{
+      display: flex;
+      justify-content: center;
+      width: 221px;
+      height: 190px;
+      background: url("../assets/Wizard/Idle.png") repeat-x left;
+      animation: stay 1s steps(6) infinite;
+  }
 
 .running{
     background: url("../assets/Wizard/Run.png") repeat-x left;
-    animation: run 1s steps(8) infinite;
+    animation: run 0.9s steps(8) infinite;
 }
  
 .jump{
@@ -64,11 +78,11 @@
   from{
     transform : translate(0,0);
   }
-  50%{
-    transform : translate(0,-300%);
-    background: url("../assets/Wizard/Fall.png") repeat-x left;
+  70%{
+    transform : translate(0,-150%);
   }
   to{
-    transform : translate(0,0);
+    transform : translate(0, 0);
   }
 }
+
