@@ -5,28 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/gameStyle.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/layers.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Entrega 3</title>
 </head>
 <body>
-    <article class="game">
-
-        <section>
-            <h1 class="points">0</h1>
-        </section>
-
-        <div class="div-player">
-            <div class="explotion">
-                <div class="player">
-                </div>
-            </div>
+   
+        <div class="layer">
+            <div class="layer layer-1"></div>
+            <div class="layer layer-2"></div>
+            <div class="layer layer-3"></div> 
+            <div class="layer layer-4-ligth"></div>
+            <div class="layer layer-4"></div>
+            <div class="layer layer-5"></div>
+            <div class="layer layer-6"></div>
+            <div class="layer layer-7-ligth"></div>
+            <div class="layer layer-7"></div>
+            <div class="layer layer-8"></div>
+            <div class="layer layer-9"></div>
         </div>
+    
+        <div class="coinAndPoint">
+            <img class="coinImage" src="assets/only_coin.png" alt=""><h1 class="points">0</h1>
+        </div>
+            <h1 class="time">Tiempo restante:</h1>
+        
 
-
-    </article>
-
+            <div class="player"></div> 
+            
     <!--<audio id="song" autoplay>
         <source src="http://scummbar.com/mi2/MI1-CD/26%20-%20Monkey%20Island%20-%20Rock%20Remix%202.mp3">
     </audio>-->
-    <script src="js/game.js"></script>
+     <script src="js/game.js"></script>
+    <script src="js/obstacles.js"></script> 
 </body>
 </html>

@@ -1,12 +1,15 @@
 //Cosas que mejorar:
-Que al 50% de la animacion jump/up cambie a el sprite por Fall.png.
 
-Creo que habria que revisar lo del movimiento del background porque no se si es la forma adecuada de usarlo.
+Cuando termina la animacion de cada layer se reincia (no deberia) y parece que se traba
+La animacion de cuando cae no quedo prolija (puse la imagen en keyframes.css)
+Si se vuelve a saltar luego de que paso al primer obstaculo da como que choca
+Si se mantiene apretado el de saltar, aunque alla llegado a su posicion este no cambia la animacion (en el loop game no entra al if para verificar la posicion)
 
 //Cosas para hacer:
-Que haya objetos los cuales tengas que esquivar y de caso contrario perder.
 
-Existe un temporizador a parte del que aparece como contador de puntos. Estaria bueno que los puntos sean por monedas que agarras en el mapa y no por el tiempo.
+Tratar de aumentar la velocidad de los objetos progresivamente
+
+Que aparezcan mas enemigos y monedas
 
 Que el personaje no baje derepente, es decir, que baje a la misma velocidad que sube (Aunque el jugador ya haya soltado la key en mitad de animacion).
 

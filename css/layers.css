@@ -1,0 +1,69 @@
+@keyframes scroll {
+    0%{background-position-x: 0px;}
+    100%{background-position-x: -1920px;}
+}
+
+.stopLayers{
+    animation-play-state: paused;
+}
+
+.layer{
+    min-height: 500px;
+    width: 100%;
+    height: 114.8%;
+    position: absolute;
+    top: -115px;
+    left: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    animation-name: scroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.layer-9{
+    background-image: url("../assets/fondo/Layer_9.png");
+    animation-duration: 7.5s ;
+    
+}
+.layer-8{
+    background-image: url("../assets/fondo/Layer_8.png");
+    animation-duration: 10s ;
+}
+.layer-7-ligth{
+    background-image: url("../assets/fondo/Layer_7_ligth.png");
+    animation-duration: 20s ;
+}
+.layer-7{
+    background-image: url("../assets/fondo/Layer_7.png");
+    animation-duration: 16s ;
+}
+.layer-6{
+    background-image: url("../assets/fondo/Layer_6.png");
+    animation-duration: 16s ;
+}
+.layer-5{
+    background-image: url("../assets/fondo/Layer_5.png");
+    animation-duration: 20s ;
+}
+.layer-4-ligth{
+    background-image: url("../assets/fondo/Layer_4_ligth.png");
+    animation-duration: 20s ;
+}
+.layer-4{
+    background-image: url("../assets/fondo/Layer_4.png");
+    animation-duration: 26s ;
+}
+.layer-3{
+    background-image: url("../assets/fondo/Layer_3.png");
+    animation-duration: 28s ;
+}
+.layer-2{
+    background-image: url("../assets/fondo/Layer_2.png");
+    animation-duration: 35s ;
+}
+.layer-1{
+    background-image: url("../assets/fondo/Layer_1.png");
+    animation-duration: 50s ;
+}
