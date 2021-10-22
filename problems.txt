@@ -1,6 +1,6 @@
 //Cosas que mejorar:
 
-Cuando termina la animacion de cada layer se reincia (no deberia) y parece que se traba
+Cuando termina la animacion de cada layer se reincia (no deberia) y parece que se traba  /// esto se genera porque se tiene que calcular el width dependiendo de la pantalla
 La animacion de cuando cae no quedo prolija (puse la imagen en keyframes.css)
 Si se vuelve a saltar luego de que paso al primer obstaculo da como que choca
 Si se mantiene apretado el de saltar, aunque alla llegado a su posicion este no cambia la animacion (en el loop game no entra al if para verificar la posicion)
