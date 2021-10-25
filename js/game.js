@@ -6,6 +6,7 @@
     let background = document.querySelector(".layer");
     let player = document.querySelector(".player");
     let tiempo = 60;
+    let saltando = false;
     const music = new Audio('./sounds/soundCoin.mp3');
     let layers = document.getElementsByClassName("layer"); 
     let originalPosition = player.getBoundingClientRect()
@@ -38,12 +39,12 @@
             if(keyDown){
                console.log("Se apreto el boton hacia arriba.");
                 player.classList.add("jump");
-
+                saltando = true;
+                setTimeout(function(){ saltando = false}, 1000);
             }
-            else{
+            else if(saltando == false){
             //    console.log("se dejo de apretar el boton hacia arriba.");
                 player.className = "player running";
-                
             }
 
         }

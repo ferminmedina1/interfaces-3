@@ -30,7 +30,6 @@
       transform : scale(1.7) translate(0,-150%);
     }
     100%{
-      background: url("../assets/Wizard/Fall.png");
       transform :scale(1.7), translate(0,0);
     }
   }

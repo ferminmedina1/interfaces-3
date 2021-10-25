@@ -11,16 +11,16 @@
     left: 0;
     background-repeat: repeat-x;
     background-size: contain;
+    background-position: 0%;
     animation-name: scroll;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     transition: none;
-    background-position: 0 0;
 }
 
 @keyframes scroll {
-    0%{background-position-x: 0px;}
-    100%{background-position-x: -1260px;}
+    0%{background-position-x: x-start;}
+    100%{background-position-x: -1115px;}
 }
 
 .layer-9{
@@ -29,41 +29,41 @@
 }
 .layer-8{
     background-image: url("../assets/fondo/Layer_8.png");
-    animation-duration: 5s ;
+    animation-duration: 6s ;
 }
 .layer-7-ligth{
     background-image: url("../assets/fondo/Layer_7_ligth.png");
-    animation-duration: 5s ;
+    animation-duration: 7s ;
 }
 .layer-7{
     background-image: url("../assets/fondo/Layer_7.png");
-    animation-duration: 5s ;
+    animation-duration: 8s ;
 }
 .layer-6{
     background-image: url("../assets/fondo/Layer_6.png");
-    animation-duration: 5s ;
+    animation-duration: 9s ;
 }
 .layer-5{
     background-image: url("../assets/fondo/Layer_5.png");
-    animation-duration: 5s ;
+    animation-duration: 10s ;
 }
 .layer-4-ligth{
     background-image: url("../assets/fondo/Layer_4_ligth.png");
-    animation-duration: 5s ;
+    animation-duration: 11s ;
 }
 .layer-4{
     background-image: url("../assets/fondo/Layer_4.png");
-    animation-duration: 5s ;
+    animation-duration: 12s ;
 }
 .layer-3{
     background-image: url("../assets/fondo/Layer_3.png");
-    animation-duration: 5s ;
+    animation-duration: 13s ;
 }
 .layer-2{
     background-image: url("../assets/fondo/Layer_2.png");
-    animation-duration: 5s ;
+    animation-duration: 14s ;
 }
 .layer-1{
     background-image: url("../assets/fondo/Layer_1.png");
-    animation-duration: 5s ;
+    animation-duration: 15s ;
 }

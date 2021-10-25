@@ -55,6 +55,7 @@ body{
     height: 103px;
     background: url(../assets/Wizard/Idle.png) repeat-x left;
     animation: stay 1s steps(6) infinite;
+    transition: none;
   }
 
   .idle{

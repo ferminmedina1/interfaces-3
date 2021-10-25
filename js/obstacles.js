@@ -9,6 +9,7 @@ let perdio = false;     //para saber si perdio
 
 crearObstaculo() //creo 1 solo para probar
 crearRecompensa() //lo mismo
+hayColision();
 
 function hayColision(){
         
@@ -25,11 +26,12 @@ function hayColision(){
         let coin = document.querySelector(".coin")
         let positionCoin = coin.getBoundingClientRect()
         positionCoin = (positionCoin.top + positionCoin.bottom + positionCoin.right + positionCoin.left) /4 
-        //  console.log(parseInt(positionAvatar), "avatar")
-        //  console.log(posicionCoin, "moneda")
-        // console.log(posicionEnemigo, "enemigo")
+        
         if (parseInt(positionCoin) == parseInt(positionAvatar)){
-    
+            console.log(parseInt(positionAvatar))
+            console.log(positionEnemigo)
+            console.log(positionCoin)
+
             console.log("Agarro Moneda")
             music.play();
             puntos++;
@@ -39,19 +41,21 @@ function hayColision(){
         }
 
         if (parseInt(positionEnemigo) == parseInt(positionAvatar)){
-            console.log("Choco enemigo")
+            console.log(parseInt(positionAvatar))
+            console.log(positionEnemigo)
+            console.log(positionCoin)
+            console.log("Choco enemigoee")
             perdio = true;
     
         }
-    },1)        
+
+        objectFuera();
+    },0.1)        
     
 }
 //Intervalo para poder obtener la posicion del avatar constantemente
 
-
-    
-    setInterval(function(){
-
+    let posicionAvatar = setInterval(function (){
         positionAvatar = player.getBoundingClientRect()
         //se obtienen las cuatro posiciones del div y se calcula el punto medio de este
         positionAvatar = (positionAvatar.right + positionAvatar.left + positionAvatar.top + positionAvatar.bottom) /4 
@@ -153,5 +157,17 @@ function moverObstaculos() {
             posicionEnemigo--;
             obstaculos[i].style.left = posicionEnemigo+"px";    //lo va corriendo
         }
+    }
+}
+
+function objectFuera(){ //esta funcion se fija si el objeto ya se fue del mapa
+    let objects = document.querySelectorAll(".enemigo");
+    if(objects != undefined){
+        objects.forEach(object => {
+            if(object.style.left == "-100px"){
+                object.remove();
+                console.log("deleteee");
+            }
+        });
     }
 }

@@ -1,16 +1,31 @@
 //Cosas que mejorar:
+La animacion de cuando cae no quedo prolija (por ahora directamente la saque)
 
-Cuando termina la animacion de cada layer se reincia (no deberia) y parece que se traba  /// esto se genera porque se tiene que calcular el width dependiendo de la pantalla
-La animacion de cuando cae no quedo prolija (puse la imagen en keyframes.css)
-Si se vuelve a saltar luego de que paso al primer obstaculo da como que choca
-Si se mantiene apretado el de saltar, aunque alla llegado a su posicion este no cambia la animacion (en el loop game no entra al if para verificar la posicion)
+Los objetos se estan moviendo con el style especificamente el atributo left. Me parece que tendriamos que usar el transform() porque es lo que vimos en clase.
 
 //Cosas para hacer:
 
-Tratar de aumentar la velocidad de los objetos progresivamente
+revisar codigo de colision, puede ser que funcione mal de vez en cuando
+
+Tratar de aumentar la velocidad de los objetos progresivamente 
 
 Que aparezcan mas enemigos y monedas
 
-Que el personaje no baje derepente, es decir, que baje a la misma velocidad que sube (Aunque el jugador ya haya soltado la key en mitad de animacion).
-
 agregar un item especial que al tomarlo cambie el escenario
+
+
+
+problemas solucionados:
+
+Si se vuelve a saltar luego de que paso al primer obstaculo da como que choca 
+// lo arregle con la funcion objectFuera(); directamente eliminando el objeto
+
+Cuando termina la animacion de cada layer se reincia (no deberia) y parece que se traba  ///
+/// esto se genera porque se tiene que calcular el width dependiendo de la pantalla
+//pude arreglarlo momentaneamente manualmente para monitores 1920x1080 pero lo mejor seria encontrar una forma que se ajuste a cualquier pantalla
+
+Que el personaje no baje derepente, es decir, que baje a la misma velocidad que sube (Aunque el jugador ya haya soltado la key en mitad de animacion).
+Si se mantiene apretado el de saltar, aunque alla llegado a su posicion este no cambia la animacion
+//lo arregle con un setTimeout.
+// saltando = true;
+// setTimeout(function(){ saltando = false}, 1000);
