@@ -55,15 +55,23 @@
         }
         else{
             if (perdio){
+                document.querySelector(".divCoins").style.display ="none"
                 document.querySelector(".points").innerHTML = "Has perdido... Puntaje: " + puntos;
+                document.querySelector(".points").style.display ="block"
                 document.querySelector(".coin").style.display ="none"
                 document.querySelector(".enemigo").style.display ="none"
                 window.clearInterval(intervalTime)
                 document.querySelector(".time").style.display ="none"  
             }
             else{
+                document.querySelector(".divCoins").style.display ="none"
                 document.querySelector(".points").innerHTML = "Se termino el tiempo... Puntaje: " + puntos;
+                document.querySelector(".points").style.display ="block"
                 window.clearInterval(intervalTime)
+                clearInterval(intervalEnemigos)
+                clearInterval(intervalRecompensa)
+                document.querySelector(".coin").style.display ="none"
+                document.querySelector(".enemigo").style.display ="none"
                 document.querySelector(".time").style.display ="none"
             }
             player.className = "idle";

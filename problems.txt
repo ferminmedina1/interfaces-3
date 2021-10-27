@@ -2,14 +2,14 @@
 La animacion de cuando cae no quedo prolija (por ahora directamente la saque)
 
 Los objetos se estan moviendo con el style especificamente el atributo left. Me parece que tendriamos que usar el transform() porque es lo que vimos en clase.
+Lo del left dijeron en la practica que se podia hacer asi
 
 //Cosas para hacer:
 
-revisar codigo de colision, puede ser que funcione mal de vez en cuando
+Tratar de mejorar la colision de el avatar y las monedas (que el punto de encuentro entre ambos no sea el centro de cada div)
+En si las dos colisiones estan fallando
 
-Tratar de aumentar la velocidad de los objetos progresivamente 
-
-Que aparezcan mas enemigos y monedas
+Reducir el div del juego? asi no se rompe
 
 agregar un item especial que al tomarlo cambie el escenario
 

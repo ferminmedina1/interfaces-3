@@ -5,27 +5,43 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .game {
   animation-play-state: paused;
   }
 
-  .coinAndPoint{
+  h2{
+        /* font-size: 116%; */
+        position: relative;
+        /* width: 57%; */
+        text-align: center;
+        display: none;
+        margin-top: 5%;
+        color: white;
+        font-size: 125%;
+        font-family: 'Press Start 2P', cursive;
+  }
+
+  .divCoins{
+    left: 91%;
     position: relative;
     display: flex;
+    width: 6%;
     flex-direction: column;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 1%;
     align-items: center;
   }
 
  .coinImage{
-    width: 4%;
+  width: 50%;
   }
 
 
-  .points{
+ .coins{
     color: white;
     font-size: 125%;
     margin-top: 10px;
@@ -52,7 +68,7 @@ body{
     display: flex;
     justify-content: center;
     width: 90px;
-    height: 103px;
+    height: 94px;
     background: url(../assets/Wizard/Idle.png) repeat-x left;
     animation: stay 1s steps(6) infinite;
     transition: none;
@@ -75,7 +91,7 @@ body{
 .running{
 
      background: url("../assets/Wizard/Run.png") repeat-x left;
-     animation: run 0.9s steps(8) infinite; 
+     animation: run 0.8s steps(8) infinite; 
 }
  
 .jump{
