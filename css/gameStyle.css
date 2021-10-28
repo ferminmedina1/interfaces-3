@@ -126,7 +126,15 @@ body{
   z-index: 1;
   background: url(../assets/coins.png) no-repeat;
   background-size: 294px;
-  animation: movingCoins 0.65s steps(6) infinite;
+  animation: rotateCoins 0.65s steps(6) infinite;
 
+}
+
+
+.agarroMoneda{
+
+
+  animation: rotateCoins 0.65s steps(6) infinite, movingCoins 0.65s;
+  /* animation: rotateCoins 0.65s steps(6) infinite; */
 }
 

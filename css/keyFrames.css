@@ -49,7 +49,7 @@
   
 }
 
-@keyframes movingCoins {
+@keyframes rotateCoins {
 
   0%{background-position: 0px;}
   100%{background-position: -303px;}
@@ -57,4 +57,18 @@
   
 }
 
+@keyframes movingCoins{
+
+  0%{
+    transform : translate(0,0);
+  }
+  50%{
+    
+    transform : scale(0.5) translate(0,-300%);
+  }
+
+  100%{
+    transform : translate(0,0);
+  }
   
+}  

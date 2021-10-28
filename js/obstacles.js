@@ -5,48 +5,54 @@ let posicionRecompensaActual = background.clientWidth;      //lo mismo que arrib
 let velociadEnemigo = 1.5;   //velociad inicial
 let velociadRecompensa = 1.5;
 let totalDeEnemigos=0;
+let positionDivRecompensa;
+let posicionDivEnemigo;
+let positionDivAvatar;
 
 crearObstaculo() //creo 1 solo para probar
 crearRecompensa() //lo mismo
 hayColision();
 
 function hayColision(){
-        
+    
     setInterval(function(){
         
-       let positionDivAvatar = player.getBoundingClientRect()
-
-        //se obtienen las cuatro posiciones del div y se calcula el punto medio de este
-         positionDivAvatar = (positionDivAvatar.top + positionDivAvatar.left + positionDivAvatar.right + positionDivAvatar.bottom ) /4
+        let enemigo = document.querySelector(".enemigo")
+        let recompensa = document.querySelector(".coin")
+        
+        //obtiene posicion del avatar
+        positionDivAvatar = player.getBoundingClientRect()
+        positionDivAvatar = (positionDivAvatar.top + positionDivAvatar.left + positionDivAvatar.right + positionDivAvatar.bottom ) /4
         positionDivAvatar = Math.round(positionDivAvatar)
         
-        let enemigo = document.querySelector(".enemigo")
-        let posicionDivEnemigo = enemigo.getBoundingClientRect()
+        //obtiene posicion del enemigo
+        posicionDivEnemigo = enemigo.getBoundingClientRect()
         posicionDivEnemigo = (posicionDivEnemigo.top + posicionDivEnemigo.left + posicionDivEnemigo.right + posicionDivEnemigo.bottom ) /4
         posicionDivEnemigo = Math.round(posicionDivEnemigo)
 
-        let recompensa = document.querySelector(".coin")
-        let positionDivRecompensa = recompensa.getBoundingClientRect()
-        positionDivRecompensa = positionDivRecompensa.left+250//(positionDivRecompensa.top + positionDivRecompensa.left + positionDivRecompensa.right + positionDivRecompensa.bottom ) /4
+        //obtiene posicion de la recompensa
+        positionDivRecompensa = recompensa.getBoundingClientRect()
+        positionDivRecompensa = (positionDivRecompensa.top + positionDivRecompensa.left + positionDivRecompensa.right + positionDivRecompensa.bottom ) /4
         positionDivRecompensa = Math.round(positionDivRecompensa)
 
 
-
         if (posicionDivEnemigo == positionDivAvatar){
+           
             console.log("Choco enemigo")
             perdio = true;
             clearInterval(intervalEnemigos)
             clearInterval(intervalRecompensa)
         }
+        
 
         if (positionDivRecompensa == positionDivAvatar){
-            console.log(positionDivAvatar, positionDivRecompensa)
+            
+            puntos++
             console.log("Agarro Moneda")
             music.play();
-            puntos++;
             document.querySelector(".coins").innerHTML = puntos;
-            document.querySelector(".coin").style.display ="none"
-    
+           
+           
         }
 
    //     objectFuera();
@@ -56,12 +62,14 @@ function hayColision(){
 
 
 //Este intervalo mueve al enemigo
+
 let intervalEnemigos = setInterval(function(){
 
     let enemigo = document.querySelector(".enemigo")
+    
     if(posicionEnemigoActual < 0){
+        
         enemigo.remove();
-        console.log("hola")
         crearObstaculo()
         if(totalDeEnemigos %2 == 0) {
             velociadEnemigo += 0.3;
@@ -79,15 +87,26 @@ let intervalRecompensa = setInterval(function(){
     let recompensa = document.querySelector(".coin")
 
     if(posicionRecompensaActual < 0){
+        
         recompensa.remove();
-        console.log("hola")
         crearRecompensa()
         //velociadRecompensa += 0.2;
         posicionRecompensaActual = background.clientWidth;
     }
-
-    moverRecompensa(recompensa)
+    if (positionDivRecompensa == positionDivAvatar){
+        
+        recompensa.classList.add("agarroMoneda")
+        
+        setTimeout(function(){
+            
+            recompensa.style.display = "none"
+        },300)
+    }
+    else{
+        moverRecompensa(recompensa)
+    }
     
+
 },7.5)
 
 
@@ -96,7 +115,7 @@ let intervalRecompensa = setInterval(function(){
 
 function crearRecompensa(){
 
-    let valueLeft =(Math.random() * (background.clientWidth - 1700) + 1700);
+    let valueLeft = (Math.random() * (background.clientWidth - 1700) + 1700);
     let recompensa = document.createElement("div");
     background.appendChild(recompensa);
     recompensa.classList.add("coin");
