@@ -18,14 +18,14 @@
 }
 
 .layer{
-    min-height: 643px;
+    min-height: 610px;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     background-repeat: repeat-x;
-    background-position-y: 100%;
+    background-position-y: 90%;
     animation-name: scroll;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
