@@ -1,18 +1,14 @@
 
 let perdio = false;     //para saber si perdio
-let posicionEnemigoActual = background.clientWidth
-let posicionRecompensaActual = background.clientWidth;      //lo mismo que arriba
-let velociadEnemigo = 1.5;   //velociad inicial
-let velociadRecompensa = 1.5;
-let totalDeEnemigos=0;
+let posicionEnemigoActual = background.clientWidth  //se obtiene el ancho de la pantalla
+let posicionRecompensaActual = background.clientWidth;
+let velociadEnemigo = 1.5;   //velociad inicial del enemigo
+let velociadRecompensa = 1.5;   //velociad inicial de la recompensa
+let totalDeEnemigos=0;          //contador de enemigos
 let positionDivRecompensa;
 let posicionDivEnemigo;
 let positionDivAvatar;
 let interval = 0;
-
-crearObstaculo() //creo 1 solo para probar
-crearRecompensa() //lo mismo
-hayColision();
 
 function hayColision(){
     
@@ -37,102 +33,47 @@ function hayColision(){
         positionDivRecompensa = Math.round(positionDivRecompensa)
 
 
-        if (posicionDivEnemigo == positionDivAvatar){
-           
-            console.log("Choco enemigo")
+        if (posicionDivEnemigo == positionDivAvatar){   //si se choca el div enemigo con el div del avatar      
             perdio = true;
-            clearInterval(intervalEnemigos)
-            clearInterval(intervalRecompensa)
         }
         
-
+        //si se choca el div recompensa con el div del avatar 
         if (positionDivRecompensa == positionDivAvatar && interval == 0){
-            puntos++;
+           
+            puntos++; //se suman los puntos
             interval = 1;
-            console.log("Agarro Moneda");
-            music.play();        
-            document.querySelector(".coins").innerHTML = puntos;
+            music.play();        //emite un sonido
+            document.querySelector(".coins").innerHTML = puntos;    //se actualizan los puntos en el DOM
             setTimeout(function(){
                 interval = 0;
             },1000)
         }
 
-   //     objectFuera();
     },1)        
     
 }
 
 
-//Este intervalo mueve al enemigo
-
-let intervalEnemigos = setInterval(function(){
-
-    let enemigo = document.querySelector(".enemigo")
-    
-    if(posicionEnemigoActual < 0){
-        
-        enemigo.remove();
-        crearObstaculo()
-        if(totalDeEnemigos %2 == 0) {
-            velociadEnemigo += 0.3;
-        }
-        posicionEnemigoActual = background.clientWidth;
-    }
-    moverObstaculos(enemigo)
-
-},5)  
-
-//Este intervalo mueve la moneda
-
-let intervalRecompensa = setInterval(function(){
-
-    let recompensa = document.querySelector(".coin")
-
-    if(posicionRecompensaActual < 0){
-        
-        recompensa.remove();
-        crearRecompensa()
-        //velociadRecompensa += 0.2;
-        posicionRecompensaActual = background.clientWidth;
-    }
-    if (positionDivRecompensa == positionDivAvatar){
-        
-        recompensa.classList.add("agarroMoneda")
-        
-        setTimeout(function(){
-            
-            recompensa.style.display = "none"
-        },300)
-    }
-    else{
-        moverRecompensa(recompensa)
-    }
-    
-
-},7.5)
-
-
-
-//se crean las monedas
+//se crean las recompensas
 
 function crearRecompensa(){
 
-    let valueLeft = (Math.random() * (background.clientWidth - 1700) + 1700);
+    let valueLeft = (Math.random() * (background.clientWidth - 1500) + 1500);
     let recompensa = document.createElement("div");
     background.appendChild(recompensa);
     recompensa.classList.add("coin");
-    recompensa.style.left = valueLeft+"px"; //las pone fuera de la pantalla
-   
+    recompensa.style.left = valueLeft+"px"; //les asigna un left
 
 }
 
 
-//se mueven las monedas
+//se mueven las recompensas
 
 function moverRecompensa(recompensa) {
 
-    if(posicionRecompensaActual >-100){
-        posicionRecompensaActual -= 1.5;
+    if(posicionRecompensaActual >-100){ //cuando salen de pantalla
+
+        posicionRecompensaActual -= 1.5;    //reducimos el left en 1.5px
         recompensa.style.left = posicionRecompensaActual+"px";    //lo va corriendo
     }
 }
@@ -142,11 +83,11 @@ function moverRecompensa(recompensa) {
 
 function crearObstaculo(){
 
-    let valueLeft = (Math.random() * (background.clientWidth - 1700) + 1700);
+    let valueLeft = (Math.random() * (background.clientWidth - 1500) + 1500);
     let obstaculo = document.createElement("div");
     background.appendChild(obstaculo);
     obstaculo.classList.add("enemigo");
-    obstaculo.style.left = valueLeft+"px";  //los pone fuera de la pantalla
+    obstaculo.style.left = valueLeft+"px";  //les asigna un left
     totalDeEnemigos++;
 }
 
@@ -156,23 +97,8 @@ function crearObstaculo(){
 function moverObstaculos(enemigo) {
     
     if(posicionEnemigoActual >-100){
-        posicionEnemigoActual -= velociadEnemigo;
-        enemigo.style.left = posicionEnemigoActual+"px";    //lo va corriendo
+        posicionEnemigoActual -= velociadEnemigo; //reducimos el left dinamicamente
+        enemigo.style.left = posicionEnemigoActual+"px";   
     }
     
 }
-
-//por ahora no se usa
-
-function objectFuera(){ //esta funcion se fija si el objeto ya se fue del mapa
-    let objects = document.querySelectorAll(".enemigo");
-    if(objects != undefined){
-        objects.forEach(object => {
-            if(object.style.left == "-100px"){
-                object.remove();
-                console.log("deleteee");
-            }
-        });
-    }
-}
-

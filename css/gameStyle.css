@@ -29,19 +29,19 @@
   }
 
  .coinImage{
-  width: 50%;
+  width: 60%;
   }
 
 
  .coins{
     color: white;
-    font-size: 125%;
+    font-size: 113%;
     margin-top: 10px;
     font-family: 'Press Start 2P', cursive;
   }
 
   .time{
-    margin-top: 5%;
+    margin-top: 7%;
     display: flex;
     margin-left: 12px;
     color: white;
