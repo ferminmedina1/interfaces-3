@@ -103,15 +103,15 @@
 
 
 .enemigo{
-  width: 5vw;
-  height: 3vw;
+  width: 65px;
+  height: 80px;
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   left: 592px;
   z-index: 1;
-  background: url(../assets/BatIdleMoving.png) no-repeat;
-  background-size: 16vw;
-  animation: movingEnemies 0.5s steps(3) infinite;
+  transform: scale(2,2);
+  background: url(../assets/gothic/Ghost-Files/PNG/ghost-idle.png) no-repeat;
+  animation: movingEnemies 0.5s steps(7) infinite;
 }
 
 

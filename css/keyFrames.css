@@ -44,7 +44,7 @@
 @keyframes movingEnemies {
 
   0%{background-position: 0px;}
-  100%{background-position: -16vw;}
+  100%{background-position: -448px;}
 
   
 }
