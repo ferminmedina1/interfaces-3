@@ -30,3 +30,9 @@ body{
     min-height: 100vw;
     background-image: linear-gradient(#c43fed, #202020);
   }
+
+  @media only screen and (max-height: 888px){
+    header{
+        display: none;
+    }
+  }

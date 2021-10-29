@@ -1,9 +1,9 @@
 @import "keyFrames.css";
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-.game {
-  animation-play-state: paused;
-  }
+  .game {
+    animation-play-state: paused;
+    }
 
   h2{
         /* font-size: 116%; */
@@ -51,7 +51,7 @@
   }
 
   .game{
-    position: absolute;
+    position: relative;
     z-index: -10;
     border: 10px solid rgb(160, 160, 160);
     border-top: 10px solid rgb(190, 190, 190);
