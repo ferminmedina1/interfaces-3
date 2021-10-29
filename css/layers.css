@@ -2,16 +2,29 @@
     animation-play-state: paused;
 }
 
+.layer-container{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.gameContainer{
+    width: 70%;
+    height: 100%;
+    margin-top: 30px;
+}
 
 .layer{
-    min-height: 500px;
+    min-height: 723px;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     background-repeat: repeat-x;
-    background-size: contain;
     background-position: 0%;
     animation-name: scroll;
     animation-timing-function: linear;
@@ -19,18 +32,19 @@
     transition: none;
 }
 
+
 @keyframes scroll {
-    0%{background-position-x: x-start;}
-    100%{background-position-x: -1115px;}
+    0%{background-position-x: 0;}
+    100%{background-position-x: -928px;}
 }
 
 .layer-9{
     background-image: url("../assets/fondo/Layer_9.png");
-    animation-duration: 5s ;
+    animation-duration: 3s ;
 }
 .layer-8{
     background-image: url("../assets/fondo/Layer_8.png");
-    animation-duration: 6s ;
+    animation-duration: 5s ;
 }
 .layer-7-ligth{
     background-image: url("../assets/fondo/Layer_7_ligth.png");

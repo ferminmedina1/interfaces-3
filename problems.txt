@@ -1,11 +1,6 @@
 //Cosas para hacer:
 
-Tratar de mejorar la colision de el avatar y las monedas (que el punto de encuentro entre ambos no sea el centro de cada div)
-En si las dos colisiones estan fallando
-
-Arrelgar puntaje (es por culpa del setTimeout)
-
-Reducir el div del juego? asi no se rompe
+arreglar tamaño del enemie para que sea proporcional a la pantalla
 
 agregar un item especial que al tomarlo cambie el escenario //mepa q ya fue estee
 

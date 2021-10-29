@@ -1,14 +1,6 @@
 @import "keyFrames.css";
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-body{
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
 .game {
   animation-play-state: paused;
   }
@@ -49,22 +41,31 @@ body{
   }
 
   .time{
-    position: absolute;
+    margin-top: 5%;
     display: flex;
-    top: 25px;
     margin-left: 12px;
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
+    z-index: 1;
   }
 
+  .game{
+    position: absolute;
+    z-index: -10;
+    border: 10px solid rgb(160, 160, 160);
+    border-top: 10px solid rgb(190, 190, 190);
+    border-bottom: 20px solid rgb(100, 100, 100);
+    border-radius: 20px;
+  }
 
   .player{
-    transform: scale(1.7 );
+    transform: scale(1.4);
     background-size: cover;
     position: absolute;
-    top: 80%;
-    left: 10%;
+    bottom: 30px;
+    left: 200px;
+    z-index: 1;
     display: flex;
     justify-content: center;
     width: 90px;
@@ -75,15 +76,16 @@ body{
   }
 
   .idle{
-    transform: scale(1.7);
+    transform: scale(1.4);
     background-size: cover;
     position: absolute;
-    top: 80%;
-    left: 10%;
+    bottom: 30px;
+    left: 200px;
+    z-index: 1;
     display: flex;
     justify-content: center;
-    width: 73px;
-    height: 103px;
+    width: 75px;
+    height: 94px;
     background: url(../assets/Wizard/Idle.png) repeat-x left;
     animation: stay 1s steps(6) infinite;
   }
@@ -101,22 +103,19 @@ body{
 
 
 .enemigo{
-
   width: 5vw;
   height: 3vw;
   position: absolute;
-  bottom: 65px;
+  bottom: 30px;
   left: 592px;
   z-index: 1;
   background: url(../assets/BatIdleMoving.png) no-repeat;
   background-size: 16vw;
   animation: movingEnemies 0.5s steps(3) infinite;
-
 }
 
 
 .coin{
-
   display: flex;
   width: 47px;
   height: 47px;
@@ -127,7 +126,6 @@ body{
   background: url(../assets/coins.png) no-repeat;
   background-size: 294px;
   animation: rotateCoins 0.65s steps(6) infinite;
-
 }
 
 

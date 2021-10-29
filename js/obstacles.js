@@ -8,6 +8,7 @@ let totalDeEnemigos=0;
 let positionDivRecompensa;
 let posicionDivEnemigo;
 let positionDivAvatar;
+let interval = 0;
 
 crearObstaculo() //creo 1 solo para probar
 crearRecompensa() //lo mismo
@@ -22,7 +23,7 @@ function hayColision(){
         
         //obtiene posicion del avatar
         positionDivAvatar = player.getBoundingClientRect()
-        positionDivAvatar = (positionDivAvatar.top + positionDivAvatar.left + positionDivAvatar.right + positionDivAvatar.bottom ) /4
+        positionDivAvatar = (positionDivAvatar.top + positionDivAvatar.left + (positionDivAvatar.right + 100)+ positionDivAvatar.bottom ) /4
         positionDivAvatar = Math.round(positionDivAvatar)
         
         //obtiene posicion del enemigo
@@ -45,18 +46,19 @@ function hayColision(){
         }
         
 
-        if (positionDivRecompensa == positionDivAvatar){
-            
-            puntos++
-            console.log("Agarro Moneda")
-            music.play();
+        if (positionDivRecompensa == positionDivAvatar && interval == 0){
+            puntos++;
+            interval = 1;
+            console.log("Agarro Moneda");
+            music.play();        
             document.querySelector(".coins").innerHTML = puntos;
-           
-           
+            setTimeout(function(){
+                interval = 0;
+            },1000)
         }
 
    //     objectFuera();
-    },0.1)        
+    },1)        
     
 }
 

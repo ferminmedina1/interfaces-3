@@ -36,8 +36,7 @@
         const elapsed = timeStamp - start;
 
         if(previousTimeStamp !== timeStamp){
-            if(keyDown){
-               console.log("Se apreto el boton hacia arriba.");
+            if(keyDown && player.className == "player running"){
                 player.classList.add("jump");
                 saltando = true;
                 setTimeout(function(){ saltando = false}, 1000);
