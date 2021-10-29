@@ -1,7 +1,0 @@
-//Cosas para hacer:
-
-arreglar tamaño del enemie para que sea proporcional a la pantalla
-
-agregar un item especial que al tomarlo cambie el escenario //mepa q ya fue estee
-
- < con eso estamos >
