@@ -10,6 +10,8 @@ let posicionDivEnemigo;
 let positionDivAvatar;
 let interval = 0;
 
+//verifica si hubo colision entre el div del avatar y el enemigo o el avatar y la recompensa
+
 function hayColision(){
     
     setInterval(function(){
@@ -19,7 +21,7 @@ function hayColision(){
         
         //obtiene posicion del avatar
         positionDivAvatar = player.getBoundingClientRect()
-        positionDivAvatar = (positionDivAvatar.top + positionDivAvatar.left + (positionDivAvatar.right + 100)+ positionDivAvatar.bottom ) /4
+        positionDivAvatar = (positionDivAvatar.top + positionDivAvatar.left + positionDivAvatar.right+ positionDivAvatar.bottom ) /4
         positionDivAvatar = Math.round(positionDivAvatar)
         
         //obtiene posicion del enemigo
@@ -29,7 +31,7 @@ function hayColision(){
 
         //obtiene posicion de la recompensa
         positionDivRecompensa = recompensa.getBoundingClientRect()
-        positionDivRecompensa = (positionDivRecompensa.top + positionDivRecompensa.left + positionDivRecompensa.right + positionDivRecompensa.bottom ) /4
+        positionDivRecompensa = (positionDivRecompensa.top + (positionDivRecompensa.left -100)+ positionDivRecompensa.right + positionDivRecompensa.bottom ) /4
         positionDivRecompensa = Math.round(positionDivRecompensa)
 
 
@@ -54,6 +56,63 @@ function hayColision(){
 }
 
 
+//Contiene un intervalo para mover las recompensas
+
+function intervalreward() {
+
+    intervalRecompensa = setInterval(function(){
+
+        let recompensa = document.querySelector(".coin")
+
+        if(posicionRecompensaActual < 0){
+                
+            recompensa.remove();
+            crearRecompensa()
+            velociadRecompensa += 0.1;
+            posicionRecompensaActual = background.clientWidth;
+        }
+        if (positionDivRecompensa == positionDivAvatar){
+                
+            recompensa.classList.add("agarroMoneda")    //aplica la animacion
+            
+            setTimeout(function(){
+                    
+                recompensa.style.display = "none"   //cuando termina la animacion se oculta el div
+            },300)
+        }
+        else{
+            moverRecompensa(recompensa) //mueve la recompensa
+        }
+        
+    },7.5)
+}
+
+
+//Contiene un intervalo para mover los enemigos
+
+function intervalEnemies(){
+    
+    intervalEnemigos = setInterval(function(){  
+
+        let enemigo = document.querySelector(".enemigo")
+            
+        if(posicionEnemigoActual < 0){  //si la posicion actual llego al inicio de la pantalla
+            
+            enemigo.remove();   //se elimina el div de enemigo
+            crearObstaculo()    //se crea otro enemigo
+            
+            if(totalDeEnemigos %2 == 0) {   //cada dos enemigos aumenta la velocidad 
+                velociadEnemigo += 0.2;
+            } 
+            posicionEnemigoActual = background.clientWidth; //se resetea la posicion actual
+        }
+
+        moverObstaculos(enemigo)    //lama a mover obstaculo
+
+    },5)  
+}
+
+
 //se crean las recompensas
 
 function crearRecompensa(){
@@ -73,7 +132,7 @@ function moverRecompensa(recompensa) {
 
     if(posicionRecompensaActual >-100){ //cuando salen de pantalla
 
-        posicionRecompensaActual -= 1.5;    //reducimos el left en 1.5px
+        posicionRecompensaActual -= velociadRecompensa;    //reducimos el left en 1.5px
         recompensa.style.left = posicionRecompensaActual+"px";    //lo va corriendo
     }
 }
